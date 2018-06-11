@@ -6,10 +6,13 @@
  */
 
 const filp = fn => (first, ...rest) => fn(...rest, first);
-let a = { name: 'John'};
+let a = { name: 'John' };
 let b = {};
 const mergeFrom = filp(Object.assign);
+console.log('mergeFrom--->>>', mergeFrom);
 let mergePerson = mergeFrom.bind(null, a);
+console.log('mergePerson--->>>', mergePerson);
 mergePerson(b);
 b = {};
 Object.assign(b, a);
+console.log(Object.assign(b, a))
